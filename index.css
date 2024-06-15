@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: "Poppins", sans-serif;
+}
+
+
+#scanBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 3rem;
+    width: 10rem;
+    background: linear-gradient(to right,  #36bd6c, #082888);
+    border: none;
+    outline: none;
+    color: #ffff;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#scanBtn:active {
+    opacity: 0.7;
+}
+
+#scannerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    visibility: hidden;
+}
+
+#reader {
+    position: relative;
+    width: 400px;
+}
+
+#result {
+    display: none; /* Hide the result initially */
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    display: none; /* Hide the popup initially */
+}
+
+.popup-content {
+    text-align: justify;
+}
+
+.popup-content p {
+    text-align: justify;
+    margin: 0; /* Remove default paragraph margin */
+}
+
+.popup .wrapper {
+    text-align: center;
+}
+
+
+/* Faculty ID Form */
+
+.facultyIDVerifyPopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.facultyIDVerifyPopup .facultyNo-wrapper {
+    padding: .80rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    height: 150px;
+    width: 280px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+.facultyIDVerifyPopup .close-facultyNo-icon {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.facultyIDVerifyPopup .close-facultyNo-icon i {
+    font-size: 1.50rem;
+    position: absolute;
+    right: .20rem;
+    top: .25rem;
+}
+
+.facultyIDVerifyPopup .contents-facultyNo-wrapper {
+    height: 70%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.facultyIDVerifyPopup .label-for-facultyNo {
+    align-self: start;
+}
+
+.facultyIDVerifyPopup .contents-facultyNo-wrapper i {
+    color: gray;
+    position: absolute;
+    left: .50rem;
+    top: 2.50rem;
+}
+
+.facultyIDVerifyPopup .facultyNo-wrapper input {
+    outline: none;
+    border: solid 1px gray;
+    height: 2rem;
+    padding-left: 1.70rem;
+    width: 100%;
+}
+
+.facultyIDVerifyPopup .button-container-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facultyIDVerifyPopup #searchButton {
+    height: 2rem; 
+    width: 8rem; 
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, #082888, #36bd6c);
+    color: white;
+    letter-spacing: 0.05rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facultyIDVerifyPopup #searchButton:active {
+    opacity: 0.3;
+}
+
+
+@media screen and (min-width: 375px) {
+    .facultyIDVerifyPopup .facultyNo-wrapper {
+        padding: .80rem;
+        height: 170px;
+        width: 300px;
+    }
+
+    .facultyIDVerifyPopup .close-facultyNo-icon i {
+        font-size: 1.70rem;
+    }
+
+
+    .facultyIDVerifyPopup .label-for-facultyNo {
+        font-size: 1.10rem;
+        align-self: start;
+    }
+
+    .facultyIDVerifyPopup .contents-facultyNo-wrapper i {
+        left: .50rem;
+        top: 3.05rem;
+        font-size: 1.10rem;
+    }
+
+    .facultyIDVerifyPopup .facultyNo-wrapper input {
+        height: 2rem;
+        padding-left: 1.70rem;
+        font-size: .90rem;
+        width: 100%;
+    }
+
+
+    .facultyIDVerifyPopup #searchButton {
+        height: 1.90rem;
+        width: 4.70rem;
+        letter-spacing: .05rem;
+        font-size: .80rem;
+    }
+}
+
+
+@media screen and (min-width: 425px) { 
+    .facultyIDVerifyPopup .facultyNo-wrapper {
+        padding: .80rem;
+        height: 200px;
+        width: 360px;
+    }
+
+    .facultyIDVerifyPopup .close-facultyNo-icon i {
+        font-size: 1.80rem;
+    }
+
+    .facultyIDVerifyPopup .label-for-facultyNo {
+        font-size: 1.30rem;
+    }
+
+    .facultyIDVerifyPopup .contents-facultyNo-wrapper i {
+        left: .50rem;
+        top: 3.55rem;
+        font-size: 1.30rem;
+    }
+
+    .facultyIDVerifyPopup .facultyNo-wrapper input {
+        width: 100%;
+        height: 2.80rem;
+        padding-left: 1.90rem;
+        font-size: 1.05rem;
+    }
+
+    .facultyIDVerifyPopup #searchButton {
+        height: 2.40rem;
+        width: 5.50rem;
+        letter-spacing: .05rem;
+        font-size: .90rem;
+    }
+}
+
+
+/* Scanner Select Event */
+
+.scannerEventSelectPopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.scannerEventSelectPopup .scannerEventSelect-wrapper {
+    padding: .80rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    height: 170px;
+    width: 300px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+.scannerEventSelectPopup .close-scannerEventSelect-icon {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.scannerEventSelectPopup .close-scannerEventSelect-icon i {
+    font-size: 1.50rem;
+    position: absolute;
+    right: .20rem;
+    top: .25rem;
+}
+
+.scannerEventSelectPopup .contents-scannerEventSelect-wrapper {
+    height: 70%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.scannerEventSelectPopup .label-for-scannerEventSelect {
+    align-self: start;
+    font-size: .78rem;
+    font-weight: bold;
+}
+
+.scannerEventSelectPopup .contents-scannerEventSelect-wrapper i {
+    color: gray;
+    position: absolute;
+    left: .90rem;
+    font-size: 1.15rem;
+    top: 2.69rem;
+}
+
+.contents-scannerEventSelect-wrapper select {
+    width: 100%;
+    outline: none;
+    border: solid 1px gray;
+    padding-left: 2rem;
+    height: 2.40rem;
+    font-size: .80rem;
+}
+
+.scannerEventSelectPopup .button-container-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scannerEventSelectPopup #submitButton {
+    height: 2rem; 
+    width: 8rem; 
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, #082888, #36bd6c);
+    color: white;
+    letter-spacing: 0.05rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scannerEventSelectPopup #submitButton:active {
+    opacity: 0.3;
+}
+
+
+@media screen and (min-width: 375px) {
+    .scannerEventSelectPopup .scannerEventSelect-wrapper {
+        padding: .80rem;
+        height: 190px;
+        width: 340px;
+    }
+
+    .scannerEventSelectPopup .close-scannerEventSelect-icon i {
+        font-size: 1.70rem;
+    }
+
+
+    .scannerEventSelectPopup .label-for-scannerEventSelect {
+        font-size: .88rem;
+        align-self: start;
+    }
+
+    .scannerEventSelectPopup .contents-scannerEventSelect-wrapper i {
+        left: .80rem;
+        top: 3.20rem;
+        font-size: 1.10rem;
+    }
+
+    .scannerEventSelectPopup #submitButton {
+        height: 2.20rem;
+        width: 10rem;
+        letter-spacing: .05rem;
+        font-size: .80rem;
+    }
+}
+
+
+@media screen and (min-width: 425px) { 
+    .scannerEventSelectPopup .scannerEventSelect-wrapper {
+        padding: .80rem;
+        height: 220px;
+        width: 390px;
+    }
+
+    .scannerEventSelectPopup .close-scannerEventSelect-icon i {
+        font-size: 1.80rem;
+    }
+
+    .scannerEventSelectPopup .label-for-scannerEventSelect {
+        font-size: 1.01rem;
+    }
+
+    .scannerEventSelectPopup .contents-scannerEventSelect-wrapper i {
+        left: .60rem;
+        top: 3.75rem;
+        font-size: 1.30rem;
+    }
+
+    .scannerEventSelectPopup #submitButton {
+        height: 2.40rem;
+        width: 9rem;
+        letter-spacing: .05rem;
+        font-size: .90rem;
+    }
+}

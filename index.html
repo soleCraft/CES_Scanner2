@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+    <link rel="stylesheet" href="index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+
+    <button id="scanBtn">Click</button>
+
+    <div id="facultyIDVerifyPopup" class="facultyIDVerifyPopup">
+        <div class="facultyNo-wrapper">
+            <button class="close-facultyNo-icon" id="closeFacultyBtn"><i class='bx bx-x'></i></button>
+            <div class="contents-facultyNo-wrapper">
+                <label class="label-for-facultyNo" for="facultyNoInput">Enter faculty number</label>
+                <i class='bx bx-book'></i>
+                <input type="text" id="facultyNoInput" name="facultyNo" placeholder="Faculty No." required>
+                <label class="label-for-facultyNo" for="facultyNoInput">Enter Password</label>
+                <i class='bx bx-book'></i>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <div class="button-container-search">
+                    <button type="submit" id="searchButton">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="scannerEventSelectPopup" class="scannerEventSelectPopup">
+        <div class="scannerEventSelect-wrapper">
+            <button class="close-scannerEventSelect-icon" id="closeEventBtn"><i class='bx bx-x'></i></button>
+            <div class="contents-scannerEventSelect-wrapper">
+                <label class="label-for-scannerEventSelect" for="scannerEventSelect">Select an event that you want to scan</label>
+                <i class='bx bx-calendar-event'></i>
+                 <select id="eventOptions" name="event">
+            <option value="" disabled selected>Select Event</option>
+        </select>
+                <div class="button-container-submit">
+                    <button type="submit" id="submitButton">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="scannerContainer" class="scannerContainer">
+        <div id="reader" style="width: 500px;"></div>
+        <div id="result"></div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div>
+            <h2>QR Results</h2>
+        </div>
+        <div id="popup-content" class="popup-content"></div>
+    </div>
+</body>
+</html>
